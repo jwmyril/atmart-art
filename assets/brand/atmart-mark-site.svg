@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Atmart">
+  <!-- Monogramme aux couleurs du site (turquoise/orange, fond transparent) — pour les en-têtes.
+       La version or/noir (atmart-mark.svg) reste le logo officiel marketing. -->
+  <circle cx="60" cy="60" r="55" fill="none" stroke="#2ec4b6" stroke-width="3"/>
+  <path d="M30 92 C20 70 24 44 44 26 C48 23 53 22 55 24 C40 40 33 62 39 88 C37 92 32 94 30 92 Z" fill="#f4a261"/>
+  <path d="M36 88 C28 68 32 46 48 30 C36 46 32 66 37 86 Z" fill="#f8c89a"/>
+  <path fill-rule="evenodd" fill="#2ec4b6" d="M66 22 L94 100 L80.5 100 L74.5 83 L57.5 83 L51.5 100 L38 100 Z M66 42 L72 71 L60 71 Z"/>
+</svg>

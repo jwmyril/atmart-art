@@ -3,38 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ATM+ Art — Atmart</title>
+  <title>Page introuvable — ATM+ Art</title>
   <meta name="robots" content="noindex, follow" />
-  <!-- GitHub Pages sert cette page pour tout chemin inconnu. On conserve le
-       chemin demande : art.atmart.ltd/oeuvres/table-ancetres arrive donc sur
-       atmart.ltd/oeuvres/table-ancetres, et aucun lien deja partage ne meurt. -->
-  <script>
-    (function () {
-      var p = location.pathname === "/" ? "/atelier" : location.pathname;
-      location.replace("https://atmart.ltd" + p + location.search + location.hash);
-    })();
-  </script>
-  <meta http-equiv="refresh" content="1; url=https://atmart.ltd/atelier" />
   <link rel="icon" href="/assets/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/assets/logo-32.png" />
   <link rel="apple-touch-icon" href="/assets/logo-192.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#060c15" />
+  <!-- Les adresses de l'ancienne implantation (atmart.ltd/atelier, /oeuvres/...)
+       ont vecu sur ce domaine avant l'independance : on les rattrape ici plutot
+       que d'afficher une erreur a quelqu'un qui suit un lien deja partage. -->
+  <script>
+    (function () {
+      var p = location.pathname;
+      var map = { "/atelier": "/", "/atelier.html": "/" };
+      if (map[p]) { location.replace(map[p]); return; }
+      if (/^\/(oeuvres|o)\/[a-z0-9-]+$/.test(p)) { location.replace(p + ".html"); }
+    })();
+  </script>
   <style>
     body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
            background:#060c15; color:#eaf2fb; font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-           text-align:center; padding:2rem; }
-    a { color:#2ec4b6; }
-    p { color:#9fb3c8; font-size:0.95rem; }
-    h1 { font-size:1.5rem; margin:0 0 0.5rem; letter-spacing:0.01em; }
-    .mark { width:132px; height:132px; border-radius:26px; display:block; margin:0 auto 1.4rem;
+           text-align:center; padding:2rem; line-height:1.6; }
+    .mark { width:96px; height:96px; border-radius:20px; display:block; margin:0 auto 1.4rem;
             box-shadow:0 10px 40px rgba(0,0,0,0.45); }
+    h1 { font-size:1.4rem; margin:0 0 0.6rem; }
+    p { color:#9fb3c8; font-size:0.95rem; max-width:46ch; margin:0 auto 0.5rem; }
+    a { color:#2ec4b6; }
+    .row { margin-top:1.2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
   </style>
 </head>
 <body>
   <main>
-    <img class="mark" src="/assets/logo-512.png" width="132" height="132" alt="ATM+ Art" />
-    <h1>ATM+ Art</h1>
-    <p>Redirection vers atmart.ltd…</p>
-    <p><a href="https://atmart.ltd/atelier">atmart.ltd/atelier</a></p>
+    <img class="mark" src="/assets/logo-512.png" width="96" height="96" alt="ATM+ Art" />
+    <h1>Cette page n'existe pas</h1>
+    <p>Le lien est peut-être ancien, ou l'adresse comporte une faute de frappe.</p>
+    <div class="row">
+      <a href="/">La galerie</a>
+      <a href="/atelier-collection.html">La collection</a>
+      <a href="/faq.html">Questions fréquentes</a>
+    </div>
   </main>
 </body>
 </html>
